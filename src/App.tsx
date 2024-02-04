@@ -13,7 +13,10 @@ import {
 } from '@jsonforms/material-renderers';
 import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
+import AgGridControl from './AgGridControl';
+import agGridControlTester from './agGridControlTester';
 import { makeStyles } from '@mui/styles';
+
 
 const useStyles = makeStyles({
   container: {
@@ -47,12 +50,20 @@ const initialData = {
   done: true,
   recurrence: 'Daily',
   rating: 3,
+  comments: [
+    {"date": "2024-02-04", "message": "Test", "enum": "two"}
+  ],
+  comments1: [
+    {"date": "2024-02-01", "message": "Eval", "enum": "one"},
+    {"date": "2024-02-02", "message": "Q", "enum": "two"}
+  ]
 };
 
 const renderers = [
   ...materialRenderers,
   //register custom renderers
   { tester: ratingControlTester, renderer: RatingControl },
+  { tester: agGridControlTester, renderer: AgGridControl }
 ];
 
 const App = () => {

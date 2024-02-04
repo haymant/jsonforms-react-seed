@@ -50,6 +50,19 @@
       "options": {
         "multi": true
       }
+    },
+    {
+      "type": "Control",
+      "scope": "#/properties/comments"
+    },
+    {
+      "type": "AgGrid",
+      "scope": "#/properties/comments1",
+      "options": {"colDefs": [
+        { "field": "date" },
+        { "field": "message" },
+        { "field": "enum" }
+      ]}
     }
   ]
 }
